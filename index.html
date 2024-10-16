@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="src/output.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <title>TravelAku.</title>
+  </head>
+  <body>
+    <div
+      id="scrollButton"
+      class="fixed bottom-6 right-6 z-50 hidden transition-opacity duration-300 transform translate-y-2 opacity-0"
+    >
+      <button
+        title="Scroll to top"
+        aria-label="Scroll to top"
+        class="inline-flex items-center gap-x-2 rounded-full bg-blue-400 px-4 py-2.5 text-sm font-semibold text-black shadow-sm hover:bg-blue-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-600 w-full"
+      >
+        <i class="fa-solid fa-arrow-up"></i>
+      </button>
+    </div>
+    <nav class="absolute z-40 bg-blue-300 opacity-60 shadow w-full">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+          <div class="flex-shrink-0 py-4">
+            <a href="#" class="text-2xl font-bold text-black">TravelAku.</a>
+          </div>
+          <div class="flex justify-between">
+            <!-- Add margin-left for larger screens -->
+            <div class="hidden md:flex sm:ml-10 sm:space-x-8">
+              <a
+                href="#"
+                class="text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-medium hover:text-gray-500"
+              >
+                Home
+              </a>
+              <a
+                href="#about"
+                class="text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-medium hover:text-gray-500"
+              >
+                About
+              </a>
+              <a
+                href="#services"
+                class="text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-medium hover:text-gray-500"
+              >
+                Services
+              </a>
+              <a
+                href="#tour-packages"
+                class="text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-medium hover:text-gray-500"
+              >
+                Tour Packages
+              </a>
+              <a
+                href="#contact"
+                class="text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-medium hover:text-gray-500"
+              >
+                Contact
+              </a>
+            </div>
+          </div>
+          <div class="-mr-2 flex items-center md:hidden">
+            <!-- Mobile menu button -->
+            <button
+              id="mobile-menu-button"
+              type="button"
+              class="inline-flex items-center justify-center p-2 rounded-md text-black hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+              aria-controls="mobile-menu"
+              aria-expanded="false"
+            >
+              <span class="sr-only">Open main menu</span>
+              <!-- Icon when menu is closed. -->
+              <svg
+                class="h-6 w-6"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden">
+          <div class="pt-2 pb-3 space-y-1">
+            <a
+              href="#"
+              class="text-gray-900 block hover:text-gray-500 px-3 py-2 text-base font-medium"
+              >Home</a
+            >
+            <a
+              href="#about"
+              class="text-gray-900 block hover:text-gray-500 px-3 py-2 text-base font-medium"
+              >About</a
+            >
+            <a
+              href="#services"
+              class="text-gray-900 block hover:text-gray-500 px-3 py-2 text-base font-medium"
+              >Services</a
+            >
+            <a
+              href="#tour-packages"
+              class="text-gray-900 block hover:text-gray-500 px-3 py-2 text-base font-medium"
+              >Tour Packages</a
+            >
+            <a
+              href="#contact"
+              class="text-gray-900 block hover:text-gray-500 px-3 py-2 text-base font-medium"
+              >Contact</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- Jumbotron with Background Image and Overlay -->
+    <div class="relative hero h-screen">
+      <!-- Overlay -->
+      <div class="absolute inset-0 bg-black opacity-70"></div>
+
+      <!-- Content inside the hero section -->
+      <div
+        class="relative z-10 flex items-center justify-center h-full text-center"
+      >
+        <div class="text-white px-4 sm:px-6 lg:px-8">
+          <h1 class="text-5xl text-white font-bold">
+            Travel<span class="text-blue-300">Aku.</span>
+          </h1>
+          <p class="mt-4 lg:text-xl sm:text-md text-gray-200">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore
+            impedit necessitatibus beatae culpa eveniet amet nemo tenetur ea
+            veritatis autem, reiciendis aspernatur laborum officia obcaecati
+            sunt omnis, itaque corrupti officiis optio unde similique tempore
+            ullam. Rem nihil voluptates consequatur ex.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- about section -->
+    <section id="about" data-aos="fade-up" data-aos-duration="2000">
+      <div
+        class="grid lg:grid-cols-3 md:grid-cols-3 my-2 gap-3 container py-5 mx-auto"
+      >
+        <div>
+          <h1 class="font-bold text-black text-3xl">
+            Experience The New Adventure
+          </h1>
+          <div class="text-gray-600 my-1">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
+            nam labore alias magnam ea aut rem corrupti amet vel error nemo
+            perspiciatis a, in impedit veniam repudiandae? Necessitatibus animi
+            fuga tenetur, alias, quia enim accusamus deleniti voluptate nostrum
+            quis modi, reprehenderit porro. Odit repudiandae molestiae eaque
+            repellendus maiores excepturi unde!
+          </div>
+        </div>
+        <div class="about-img rounded-xl h-48 md:h-full col-span-2"></div>
+      </div>
+    </section>
+
+    <!-- services section -->
+    <section id="services">
+      <div class="bg-lime-800 my-2 p-3">
+        <div class="text-3xl text-white font-bold text-center">Services</div>
+        <div
+          class="container grid lg:grid-cols-4 md:grid-cols-4 gap-5 mx-auto my-3"
+        >
+          <div
+            class="text-center bg-white rounded-xl shadow-md shadow-black"
+            data-aos="zoom-in"
+            data-aos-duration="1000"
+          >
+            <div
+              class="text-xl my-3 mx-auto bg-blue-300 w-10 h-10 flex rounded-full"
+            >
+              <span class="m-auto"
+                ><i class="fa-regular fa-paper-plane"></i
+              ></span>
+            </div>
+            <h1 class="font-bold text-xl">Airport Services</h1>
+            <div class="text-gray-600 text-sm mx-2 my-3">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, earum
+              voluptatem culpa, voluptate placeat rerum unde ut vel fugit, esse
+              nesciunt id vitae amet beatae. Quod eaque nesciunt numquam
+              temporibus.
+            </div>
+          </div>
+          <div
+            class="text-center bg-white rounded-xl shadow-md shadow-black"
+            data-aos="zoom-in"
+            data-aos-duration="1000"
+          >
+            <div
+              class="text-xl my-3 mx-auto bg-blue-300 w-10 h-10 flex rounded-full"
+            >
+              <span class="m-auto"><i class="fa-solid fa-wallet"></i></span>
+            </div>
+            <h1 class="font-bold text-xl">Easy Booking</h1>
+            <div class="text-gray-600 text-sm mx-2 my-3">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, earum
+              voluptatem culpa, voluptate placeat rerum unde ut vel fugit, esse
+              nesciunt id vitae amet beatae. Quod eaque nesciunt numquam
+              temporibus.
+            </div>
+          </div>
+          <div
+            class="text-center bg-white rounded-xl shadow-md shadow-black"
+            data-aos="zoom-in"
+            data-aos-duration="1000"
+          >
+            <div
+              class="text-xl my-3 mx-auto bg-blue-300 w-10 h-10 flex rounded-full"
+            >
+              <span class="m-auto"><i class="fa-solid fa-person"></i></span>
+            </div>
+            <h1 class="font-bold text-xl">Best Tour Guide</h1>
+            <div class="text-gray-600 text-sm mx-2 my-3">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, earum
+              voluptatem culpa, voluptate placeat rerum unde ut vel fugit, esse
+              nesciunt id vitae amet beatae. Quod eaque nesciunt numquam
+              temporibus.
+            </div>
+          </div>
+          <div
+            class="text-center bg-white rounded-xl shadow-md shadow-black"
+            data-aos="zoom-in"
+            data-aos-duration="1000"
+          >
+            <div
+              class="text-xl my-3 mx-auto bg-blue-300 w-10 h-10 flex rounded-full"
+            >
+              <span class="m-auto"><i class="fa-solid fa-percent"></i> </span>
+            </div>
+            <h1 class="font-bold text-xl">Lots of Promos</h1>
+            <div class="text-gray-600 text-sm mx-2 my-3">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, earum
+              voluptatem culpa, voluptate placeat rerum unde ut vel fugit, esse
+              nesciunt id vitae amet beatae. Quod eaque nesciunt numquam
+              temporibus.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- tour packages section -->
+    <section id="tour-packages" data-aos="fade-up" data-aos-duration="2000">
+      <div class="container mx-auto my-5">
+        <h1 class="font-bold text-3xl text-center">
+          Tour <span class="text-blue-400">Packages</span>
+        </h1>
+        <div
+          class="grid lg:grid-cols-3 md:grid-cols-3 gap-5 place-items-center my-3"
+        >
+          <div class="card card-image-cover bg-white shadow-xl">
+            <img src="src/img/tour-packages1.jpg" alt="" />
+            <div class="card-body">
+              <h2 class="card-header">Ubud Packages Tours</h2>
+              <p class="text-content2">
+                Are you looking to increase your productivity at work?
+              </p>
+              <div class="card-footer">
+                <a href="">
+                  <button
+                    class="btn btn-primary btn-md w-32 bg-blue-400 hover:bg-blue-300 hover:scale-105 hover:shadow-xl"
+                  >
+                    Details
+                  </button>
+                </a>
+                <a href="" class="mx-3">
+                  <button
+                    class="btn btn-primary btn-md w-32 bg-blue-400 hover:bg-blue-300 hover:scale-105 hover:shadow-xl"
+                  >
+                    Book Now
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="card card-image-cover bg-white shadow-xl">
+            <img src="src/img/tour-packages2.jpg" alt="" />
+            <div class="card-body">
+              <h2 class="card-header">Uluwatu Packages Tours</h2>
+              <p class="text-content2">
+                Are you looking to increase your productivity at work?
+              </p>
+              <div class="card-footer">
+                <a href="">
+                  <button
+                    class="btn btn-primary btn-md w-32 bg-blue-400 hover:bg-blue-300 hover:scale-105 hover:shadow-xl"
+                  >
+                    Details
+                  </button>
+                </a>
+                <a href="" class="mx-3">
+                  <button
+                    class="btn btn-primary btn-md w-32 bg-blue-400 hover:bg-blue-300 hover:scale-105 hover:shadow-xl"
+                  >
+                    Book Now
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="card card-image-cover bg-white shadow-xl">
+            <img src="src/img/tour-packages3.jpg" alt="" class="w-full" />
+            <div class="card-body">
+              <h2 class="card-header">Buleleng Packages Tours</h2>
+              <p class="text-content2">
+                Are you looking to increase your productivity at work?
+              </p>
+              <div class="card-footer">
+                <a href="">
+                  <button
+                    class="btn btn-primary btn-md w-32 bg-blue-400 hover:bg-blue-300 hover:scale-105 hover:shadow-xl"
+                  >
+                    Details
+                  </button>
+                </a>
+                <a href="" class="mx-3">
+                  <button
+                    class="btn btn-primary btn-md w-32 bg-blue-400 hover:bg-blue-300 hover:scale-105 hover:shadow-xl"
+                  >
+                    Book Now
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- end section tour packages -->
+
+    <!-- contact section -->
+    <section id="contact" data-aos="fade-up" data-aos-duration="2000">
+      <div class="container mx-auto">
+        <div class="mx-auto" style="width: 70%">
+          <h1 class="text-center font-bold text-3xl my-3">Contact Us</h1>
+          <p class="text-center text-gray-600 my-3">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta,
+            assumenda a corrupti illum quae similique quas magni perferendis,
+            dignissimos neque doloribus aperiam quidem iste consequatur.
+            Suscipit magnam corporis libero quidem.
+          </p>
+        </div>
+      </div>
+      <div class="container mx-auto mt-14">
+        <h1 class="font-bold text-2xl text-center lg:text-left md:text-left">
+          Get In Touch
+        </h1>
+        <div class="grid lg:grid-cols-2 md:grid-cols-2">
+          <div class="my-2 text-center lg:text-left md:text-left">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt,
+            quaerat id! Quaerat, id perspiciatis ipsum totam sed architecto
+            aliquam magni.
+            <div class="flex -m-3 my-2 font-bold">
+              <div
+                class="text-xl mx-2 bg-blue-400 w-10 h-10 flex rounded-full hover:bg-blue-300"
+              >
+                <span class="m-auto"
+                  ><i class="fa-solid fa-location-dot"></i>
+                </span>
+              </div>
+              Address
+            </div>
+            <div class="mx-11 -mt-6">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum
+            </div>
+            <div class="flex -m-3 my-2 font-bold">
+              <div
+                class="text-xl mx-2 bg-blue-400 w-10 h-10 flex rounded-full hover:bg-blue-300"
+              >
+                <span class="m-auto"><i class="fa-solid fa-phone"></i> </span>
+              </div>
+              Phone Number
+            </div>
+            <div class="mx-11 -mt-6">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum
+            </div>
+            <div class="flex -m-3 my-2 font-bold">
+              <a
+                href="https://api.whatsapp.com/send/?phone=6281237258566&text&type=phone_number&app_absent=0"
+                target="_blank"
+                ><div
+                  class="text-xl mx-2 bg-blue-400 w-10 h-10 flex rounded-full hover:bg-blue-300"
+                >
+                  <span class="m-auto"
+                    ><i class="fa-regular fa-envelope"></i>
+                  </span></div
+              ></a>
+
+              E-mail
+            </div>
+            <div class="mx-11 -mt-6">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum
+            </div>
+            <hr class="mt-5 border-2 border-blue-400 lg:max-w-sm md:max-w-xs" />
+            <div class="my-2">
+              <h1 class="text-lg">Follow Us:</h1>
+            </div>
+            <div
+              class="flex gap-5 items-center sm:justify-center lg:justify-start md:justify-start my-2"
+            >
+              <div class="flex font-bold">
+                <a
+                  href="https://api.whatsapp.com/send/?phone=6281237258566&text&type=phone_number&app_absent=0"
+                  target="_blank"
+                  ><div
+                    class="text-xl bg-blue-400 w-10 h-10 flex rounded-full hover:bg-blue-300"
+                  >
+                    <span class="m-auto"
+                      ><i class="fa-brands fa-instagram"></i>
+                    </span></div
+                ></a>
+              </div>
+              <div class="flex font-bold">
+                <a
+                  href="https://api.whatsapp.com/send/?phone=6281237258566&text&type=phone_number&app_absent=0"
+                  target="_blank"
+                  ><div
+                    class="text-xl bg-blue-400 w-10 h-10 flex rounded-full hover:bg-blue-300"
+                  >
+                    <span class="m-auto"
+                      ><i class="fa-brands fa-facebook"></i>
+                    </span></div
+                ></a>
+              </div>
+              <div class="flex font-bold">
+                <a
+                  href="https://api.whatsapp.com/send/?phone=6281237258566&text&type=phone_number&app_absent=0"
+                  target="_blank"
+                  ><div
+                    class="text-xl bg-blue-400 w-10 h-10 flex rounded-full hover:bg-blue-300"
+                  >
+                    <span class="m-auto"
+                      ><i class="fa-brands fa-youtube"></i>
+                    </span></div
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="bg-gray-2 rounded-xl">
+            <div class="p-8 shadow-xl shadow-blue-400">
+              <form
+                action="https://api.web3forms.com/submit"
+                method="POST"
+                class="space-y-4"
+              >
+                <input
+                  type="hidden"
+                  name="access_key"
+                  value="b74858c9-fbed-475f-8eb2-49b33a976ee5"
+                />
+                <div>
+                  <h1 class="font-bold text-xl text-center">Send a Message.</h1>
+                </div>
+                <div class="w-full border-b-2 border-blue-300">
+                  <label class="sr-only" for="name">Name</label>
+                  <input
+                    class="input input-solid max-w-full"
+                    placeholder="Name"
+                    type="text"
+                    name="name"
+                    autocomplete="off"
+                    required
+                  />
+                </div>
+
+                <div class="border-b-2 border-blue-300 grid grid-cols-2">
+                  <div>
+                    <label class="sr-only" for="email">E-mail</label>
+                    <input
+                      class="input input-solid"
+                      placeholder="E-mail address"
+                      type="email"
+                      name="email"
+                      autocomplete="off"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label class="sr-only" for="phone">Phone</label>
+                    <input
+                      class="input input-solid"
+                      placeholder="Phone Number"
+                      type="tel"
+                      name="phone"
+                      autocomplete="off"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div class="w-full shadow-sm rounded-md shadow-black">
+                  <label class="sr-only" for="message">Message</label>
+
+                  <textarea
+                    class="textarea textarea-solid max-w-full h-32"
+                    placeholder="Message"
+                    rows="8"
+                    name="message"
+                  ></textarea>
+                </div>
+                <div class="mt-4 flex justify-end">
+                  <button
+                    type="submit"
+                    class="rounded-lg btn bg-blue-500 text-white hover:bg-blue-400 hover:scale-105"
+                  >
+                    Submit
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1123.8449821254649!2d115.10089164023904!3d-8.629998912648109!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd23973ac416395%3A0xfbe94c3423f0ca32!2sLuna%20Beach%20Club!5e0!3m2!1sen!2sid!4v1728803159375!5m2!1sen!2sid"
+            width="100%"
+            height="400"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            class="mx-auto mt-10 lg:mt-2 border-blue-300"
+          ></iframe>
+        </div>
+        <div
+          class="grid md:grid-cols-2 gap-6 my-3"
+          data-aos="fade-up"
+          data-aos-duration="2000"
+        >
+          <div
+            class="text-gray-400 text-center md:text-left justify-center my-auto"
+          >
+            <h1
+              class="font-bold text-xl md:text-3xl text-center md:text-left text-black"
+            >
+              Any Questions? <br />
+              We Got You
+            </h1>
+            <p class="mt-3">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint
+              repudiandae nostrum tempore perspiciatis maxime soluta recusandae
+              modi consequuntur reprehenderit ad!
+            </p>
+          </div>
+          <div class="accordion-group">
+            <div class="accordion">
+              <input type="checkbox" id="toggle-15" class="accordion-toggle" />
+              <label for="toggle-15" class="accordion-title text-sm"
+                >How to book?</label
+              >
+              <span class="accordion-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"
+                  ></path>
+                </svg>
+              </span>
+              <div class="accordion-content text-content2">
+                <div class="min-h-0">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
+                  necessitatibus iusto laborum autem placeat aspernatur
+                  inventore eius deleniti reprehenderit? Numquam commodi totam
+                  mollitia quod
+                </div>
+              </div>
+            </div>
+            <div class="accordion">
+              <input type="checkbox" id="toggle-16" class="accordion-toggle" />
+              <label for="toggle-16" class="accordion-title text-sm"
+                >Are there any additional fee?</label
+              >
+              <span class="accordion-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"
+                  ></path>
+                </svg>
+              </span>
+              <div class="accordion-content text-content2">
+                <div class="min-h-0">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
+                  necessitatibus iusto laborum autem placeat aspernatur
+                  inventore eius deleniti reprehenderit? Numquam commodi totam
+                  mollitia quod
+                </div>
+              </div>
+            </div>
+            <div class="accordion">
+              <input type="checkbox" id="toggle-17" class="accordion-toggle" />
+              <label for="toggle-17" class="accordion-title text-sm"
+                >Can the booking be cancelled?</label
+              >
+              <span class="accordion-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"
+                  ></path>
+                </svg>
+              </span>
+              <div class="accordion-content text-content2">
+                <div class="min-h-0">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
+                  necessitatibus iusto laborum autem placeat aspernatur
+                  inventore eius deleniti reprehenderit? Numquam commodi totam
+                  mollitia quod
+                </div>
+              </div>
+            </div>
+            <div class="accordion">
+              <input type="checkbox" id="toggle-18" class="accordion-toggle" />
+              <label for="toggle-18" class="accordion-title text-sm"
+                >Can the package be refunded?</label
+              >
+              <span class="accordion-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"
+                  ></path>
+                </svg>
+              </span>
+              <div class="accordion-content">
+                <div class="min-h-0">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
+                  necessitatibus iusto laborum autem placeat aspernatur
+                  inventore eius deleniti reprehenderit? Numquam commodi totam
+                  mollitia quod
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div
+        class="bg-slate-800 md:flex text-center justify-between py-3 mt-8 px-8"
+      >
+        <div class="footer text-white text-sm">
+          Copyright 2024 MajaCode. All Rights Reserved.
+        </div>
+        <div
+          class="text-white mt-2 md:mt-0 justify-center items-center flex gap-3"
+        >
+          <div class="flex font-bold">
+            <a href="https://github.com/riskymahendraa" target="_blank"
+              ><div
+                class="text-xl md:text-sm hover:text-black bg-blue-400 w-8 h-8 md:w-6 md:h-6 flex rounded-full hover:bg-blue-300"
+              >
+                <span class="m-auto"
+                  ><i class="fa-brands fa-github"></i>
+                </span></div
+            ></a>
+          </div>
+          <div class="flex font-bold">
+            <a href="https://www.instagram.com/riskymahendraa/" target="_blank"
+              ><div
+                class="text-xl hover:text-black md:text-sm bg-blue-400 w-8 h-8 md:w-6 md:h-6 flex rounded-full hover:bg-blue-300"
+              >
+                <span class="m-auto"
+                  ><i class="fa-brands fa-instagram"></i>
+                </span></div
+            ></a>
+          </div>
+          <div class="flex font-bold">
+            <a
+              href="https://api.whatsapp.com/send/?phone=6281237258566&text&type=phone_number&app_absent=0"
+              target="_blank"
+              ><div
+                class="text-xl md:text-sm hover:text-black bg-blue-400 w-8 h-8 md:w-6 md:h-6 flex rounded-full hover:bg-blue-300"
+              >
+                <span class="m-auto"
+                  ><i class="fa-brands fa-whatsapp"></i>
+                </span></div
+            ></a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="./script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        once: true,
+      });
+    </script>
+  </body>
+</html>

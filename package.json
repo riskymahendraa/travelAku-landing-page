@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "tailwindcss": "^3.4.13"
+  },
+  "dependencies": {
+    "aos": "^2.3.4",
+    "rippleui": "^1.12.1"
+  }
+}
